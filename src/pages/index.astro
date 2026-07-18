@@ -9,12 +9,18 @@ const marcas = [
     desc: 'Cursos de produção musical, direto com quem já produz há anos.',
     href: 'https://edtutoriais.com.br',
     accent: 'brand-purple',
+    logo: '/images/edtutoriais-logo.png',
+    logoW: 80,
+    logoH: 38,
   },
   {
     nome: 'Samples Brasil',
     desc: 'Loops, waves e pacotes Kontakt prontos pra arrastar na tua DAW.',
     href: 'https://samplesbrasil.com',
     accent: 'brand-red',
+    logo: '/images/samplesbrasil-logo.png',
+    logoW: 200,
+    logoH: 43,
   },
   {
     nome: 'EM Music Produções',
@@ -22,6 +28,8 @@ const marcas = [
     href: 'https://emmusicproducoes.com.br',
     accent: 'brand-green',
     logo: '/images/em-music-logo.png',
+    logoW: 578,
+    logoH: 240,
   },
   {
     nome: 'Eder Machado',
@@ -29,6 +37,14 @@ const marcas = [
     href: 'https://eder.edtmusic.com.br',
     accent: 'brand-purple',
   },
+];
+
+const logosRede = [
+  { nome: 'Rede Loops Brasil', logo: '/images/loopsbrasil-logo.png', w: 800, h: 340, h_: 'h-7' },
+  { nome: 'ED Tutoriais', logo: '/images/edtutoriais-logo.png', w: 80, h: 38, h_: 'h-5' },
+  { nome: 'Samples Brasil', logo: '/images/samplesbrasil-logo.png', w: 200, h: 43, h_: 'h-4' },
+  { nome: 'EM Music Produções', logo: '/images/em-music-logo.png', w: 578, h: 240, h_: 'h-6' },
+  { nome: 'EDTMusic', logo: '/images/edtmusic-logo.png', w: 753, h: 160, h_: 'h-4' },
 ];
 
 const emBreve = {
@@ -102,39 +118,41 @@ const structuredData = {
               rel="noopener noreferrer"
               class={`glow-card flex flex-col rounded-2xl border border-ink-line bg-ink-raised p-6`}
             >
-              {m.logo && (
+              {m.logo ? (
                 <img
                   src={m.logo}
                   alt={`Logo ${m.nome}`}
-                  class="mb-3 h-14 w-auto self-start"
-                  width="578"
-                  height="240"
+                  class="mb-3 h-9 w-auto self-start"
+                  width={m.logoW}
+                  height={m.logoH}
                   loading="lazy"
                 />
+              ) : (
+                <span class={`text-xs font-semibold uppercase tracking-[0.15em] text-${m.accent}`}>
+                  {m.nome}
+                </span>
               )}
-              <span class={`text-xs font-semibold uppercase tracking-[0.15em] text-${m.accent}`}>
-                {m.nome}
-              </span>
               <p class="mt-2 text-sm text-paper/60">{m.desc}</p>
             </a>
           ))}
+        </div>
 
-          <div class="flex flex-col rounded-2xl border border-dashed border-ink-line p-6 opacity-60">
-            {emBreve.logo && (
-              <img
-                src={emBreve.logo}
-                alt={`Logo ${emBreve.nome}`}
-                class="mb-3 h-10 w-auto self-start"
-                width="753"
-                height="160"
-                loading="lazy"
-              />
-            )}
-            <span class="text-xs font-semibold uppercase tracking-[0.15em] text-paper/50">
-              {emBreve.nome} (em breve)
-            </span>
-            <p class="mt-2 text-sm text-paper/50">{emBreve.desc}</p>
-          </div>
+        <!-- "em breve" fica fora do grid de propósito: nao eh um link clicavel
+             como as marcas ativas, entao ganha uma faixa horizontal própria em
+             vez de sobrar sozinha numa grade 2 colunas -->
+        <div class="mt-4 flex flex-col items-center gap-4 rounded-2xl border border-dashed border-ink-line p-6 opacity-60 sm:flex-row sm:justify-between">
+          <img
+            src={emBreve.logo}
+            alt={`Logo ${emBreve.nome}`}
+            class="h-8 w-auto"
+            width="753"
+            height="160"
+            loading="lazy"
+          />
+          <p class="text-center text-sm text-paper/50 sm:text-right">
+            {emBreve.desc}
+            <span class="ml-1 text-xs uppercase tracking-[0.1em] text-paper/40">(em breve)</span>
+          </p>
         </div>
       </div>
     </section>
@@ -162,8 +180,20 @@ const structuredData = {
     </section>
 
     <!-- RODAPÉ -->
-    <footer class="border-t border-ink-line px-6 py-10">
-      <div class="mx-auto flex max-w-4xl flex-col items-center gap-3 text-center">
+    <footer class="border-t border-ink-line px-6 py-12">
+      <div class="mx-auto flex max-w-4xl flex-col items-center gap-6 text-center">
+        <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+          {logosRede.map((l) => (
+            <img
+              src={l.logo}
+              alt={l.nome}
+              class={`${l.h_} w-auto opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0`}
+              width={l.w}
+              height={l.h}
+              loading="lazy"
+            />
+          ))}
+        </div>
         <p class="text-xs uppercase tracking-[0.2em] text-paper/40">Rede Loops Brasil</p>
       </div>
     </footer>
