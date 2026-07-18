@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import RedeSwitcher from '../components/RedeSwitcher.astro';
 
 interface Props {
   title: string;
@@ -7,8 +8,9 @@ interface Props {
   image?: string;
   ogType?: string;
   structuredData?: Record<string, unknown>;
+  redeAtual?: string;
 }
-const { title, description, image, ogType = 'website', structuredData } = Astro.props;
+const { title, description, image, ogType = 'website', structuredData, redeAtual } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImage = image ? new URL(image, Astro.site).toString() : undefined;
 ---
@@ -45,6 +47,7 @@ const ogImage = image ? new URL(image, Astro.site).toString() : undefined;
     />
   </head>
   <body class="bg-ink text-paper font-body antialiased">
+    {redeAtual && <RedeSwitcher atual={redeAtual} />}
     <slot />
   </body>
 </html>
