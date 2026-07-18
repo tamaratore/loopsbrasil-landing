@@ -31,12 +31,6 @@ const marcas = [
     logoW: 578,
     logoH: 240,
   },
-  {
-    nome: 'Eder Machado',
-    desc: 'Últimos lançamentos, clipes e onde ouvir nas plataformas digitais.',
-    href: 'https://eder.edtmusic.com.br',
-    accent: 'brand-purple',
-  },
 ];
 
 const logosRede = [
@@ -110,7 +104,7 @@ const structuredData = {
     <section class="px-6 py-14">
       <div class="mx-auto max-w-4xl">
         <h2 class="font-display text-3xl text-paper">As marcas</h2>
-        <div class="mt-8 grid gap-4 sm:grid-cols-2">
+        <div class="mt-8 grid gap-4 sm:grid-cols-3">
           {marcas.map((m) => (
             <a
               href={m.href}
