@@ -21,6 +21,7 @@ const marcas = [
     desc: 'Grava, mixa e masteriza com o Eder Machado. Piseiro, arrocha, pagode, axé.',
     href: 'https://emmusicproducoes.com.br',
     accent: 'brand-green',
+    logo: '/images/em-music-logo.png',
   },
   {
     nome: 'Eder Machado',
@@ -33,7 +34,19 @@ const marcas = [
 const emBreve = {
   nome: 'EDTMusic',
   desc: 'Selo e editora: direitos autorais, contratos e arrecadação musical.',
+  logo: '/images/edtmusic-logo.png',
 };
+
+const fundadores = [
+  {
+    nome: 'Tamara Toré',
+    papel: 'Sócia-fundadora — operação, produto e tecnologia',
+  },
+  {
+    nome: 'Eder Machado',
+    papel: 'Sócio-fundador — produção musical e conteúdo',
+  },
+];
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -42,6 +55,10 @@ const structuredData = {
   url: 'https://loopsbrasil.com.br',
   logo: 'https://loopsbrasil.com.br/images/loopsbrasil-logo.png',
   sameAs: marcas.map((m) => m.href),
+  founder: fundadores.map((f) => ({
+    '@type': 'Person',
+    name: f.nome,
+  })),
 };
 ---
 <Base
@@ -85,6 +102,16 @@ const structuredData = {
               rel="noopener noreferrer"
               class={`glow-card flex flex-col rounded-2xl border border-ink-line bg-ink-raised p-6`}
             >
+              {m.logo && (
+                <img
+                  src={m.logo}
+                  alt={`Logo ${m.nome}`}
+                  class="mb-3 h-8 w-auto self-start"
+                  width="578"
+                  height="240"
+                  loading="lazy"
+                />
+              )}
               <span class={`text-xs font-semibold uppercase tracking-[0.15em] text-${m.accent}`}>
                 {m.nome}
               </span>
@@ -93,11 +120,43 @@ const structuredData = {
           ))}
 
           <div class="flex flex-col rounded-2xl border border-dashed border-ink-line p-6 opacity-60">
+            {emBreve.logo && (
+              <img
+                src={emBreve.logo}
+                alt={`Logo ${emBreve.nome}`}
+                class="mb-3 h-6 w-auto self-start"
+                width="753"
+                height="160"
+                loading="lazy"
+              />
+            )}
             <span class="text-xs font-semibold uppercase tracking-[0.15em] text-paper/50">
               {emBreve.nome} (em breve)
             </span>
             <p class="mt-2 text-sm text-paper/50">{emBreve.desc}</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUEM SOMOS -->
+    <section class="px-6 py-14">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="font-display text-3xl text-paper">Quem somos</h2>
+        <p class="mt-4 max-w-2xl text-sm text-paper/60">
+          A Rede Loops Brasil nasceu da parceria entre Tamara Toré e Eder Machado: uma cuida da
+          operação, do produto e da tecnologia; o outro, da produção musical e do conteúdo.
+          Juntos, tocam as marcas acima.
+        </p>
+        <div class="mt-8 grid gap-4 sm:grid-cols-2">
+          {fundadores.map((f) => (
+            <div class="rounded-2xl border border-ink-line bg-ink-raised p-6">
+              <span class="text-xs font-semibold uppercase tracking-[0.15em] text-brand-purple">
+                {f.nome}
+              </span>
+              <p class="mt-2 text-sm text-paper/60">{f.papel}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
