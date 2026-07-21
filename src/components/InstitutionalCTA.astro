@@ -1,0 +1,17 @@
+---
+interface Props {
+  texto: string;
+  href: string;
+  label: string;
+}
+const { texto, href, label } = Astro.props;
+---
+<section class="px-6 pb-20 pt-6 text-center">
+  <p class="mx-auto max-w-md text-paper/70">{texto}</p>
+  <a
+    href={href}
+    class="mt-6 inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-brand-purple to-brand-red px-8 py-4 font-display text-lg uppercase tracking-wide text-paper"
+  >
+    {label}
+  </a>
+</section>

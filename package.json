@@ -6,13 +6,18 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "typecheck": "astro check"
   },
   "dependencies": {
-    "astro": "^5.1.0",
-    "@astrojs/tailwind": "^5.1.4",
     "@astrojs/sitemap": "^3.2.1",
-    "tailwindcss": "^3.4.17",
-    "gsap": "^3.12.5"
+    "@astrojs/tailwind": "^5.1.4",
+    "astro": "^5.1.0",
+    "gsap": "^3.12.5",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "typescript": "^5.9.3"
   }
 }

@@ -1,0 +1,29 @@
+---
+const principios = [
+  {
+    titulo: 'Amizade e parceria',
+    desc: 'A rede nasceu de uma amizade e se sustenta na parceria: cada marca cuidando bem da sua parte, juntos.',
+  },
+  {
+    titulo: 'União de forças',
+    desc: 'Produção musical e tecnologia caminhando lado a lado, sem uma pesar mais que a outra.',
+  },
+  {
+    titulo: 'Escuta do público',
+    desc: 'Antes de lançar qualquer coisa, a gente escuta quem realmente usa: músicos, produtores e alunos.',
+  },
+];
+---
+<section class="px-6 py-14">
+  <div class="mx-auto max-w-3xl">
+    <h2 class="font-display text-3xl text-paper">O que a gente valoriza</h2>
+    <div class="mt-8 grid gap-4 sm:grid-cols-3">
+      {principios.map((p) => (
+        <div class="glow-card rounded-2xl border border-ink-line bg-ink-raised p-5">
+          <p class="font-semibold text-paper">{p.titulo}</p>
+          <p class="mt-2 text-sm text-paper/60">{p.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

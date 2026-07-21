@@ -1,0 +1,34 @@
+---
+import FounderCard from './FounderCard.astro';
+
+interface Fundador {
+  nome: string;
+  papel: string;
+  cidade: string;
+}
+
+interface Props {
+  fundadores: Fundador[];
+}
+const { fundadores } = Astro.props;
+---
+<section class="px-6 py-14">
+  <div class="mx-auto max-w-3xl">
+    <h2 class="font-display text-3xl text-paper">Como a rede nasceu</h2>
+    <p class="mt-4 text-paper/70">
+      A Rede Loops Brasil nasceu de uma parceria: Eder Machado e Tamara Toré,
+      cada um cuidando de uma parte do trabalho, juntando produção musical e
+      tecnologia pra atender quem faz música de verdade. Um cuida da produção
+      musical e do conteúdo, a outra da operação, do produto e da tecnologia.
+    </p>
+    <p class="mt-4 text-paper/70">
+      Dessa parceria vieram as marcas que hoje formam a rede: cursos, loops,
+      produção e selo, cada uma cuidando de uma parte da jornada de quem vive
+      de música.
+    </p>
+
+    <div class="mt-8 grid gap-4 sm:grid-cols-2">
+      {fundadores.map((f) => <FounderCard nome={f.nome} papel={f.papel} cidade={f.cidade} />)}
+    </div>
+  </div>
+</section>

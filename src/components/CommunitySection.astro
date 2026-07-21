@@ -1,0 +1,21 @@
+---
+const grupos = [
+  'Músicos', 'Produtores', 'Artistas', 'Clientes', 'Alunos', 'Seguidores', 'Parceiros',
+];
+---
+<section class="px-6 py-14">
+  <div class="mx-auto max-w-3xl text-center">
+    <h2 class="font-display text-3xl text-paper">Contato direto, sempre</h2>
+    <p class="mx-auto mt-4 max-w-xl text-paper/70">
+      A rede existe pra ficar perto de quem faz parte dela de verdade, sem
+      intermediário nem distância.
+    </p>
+    <div class="mt-6 flex flex-wrap items-center justify-center gap-2">
+      {grupos.map((g) => (
+        <span class="rounded-full border border-ink-line px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-paper/70">
+          {g}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>

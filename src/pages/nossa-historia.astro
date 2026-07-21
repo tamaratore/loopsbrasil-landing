@@ -1,0 +1,114 @@
+---
+import Base from '../layouts/Base.astro';
+import InstitutionalHero from '../components/InstitutionalHero.astro';
+import StorySection from '../components/StorySection.astro';
+import BrandSection from '../components/BrandSection.astro';
+import PrinciplesSection from '../components/PrinciplesSection.astro';
+import CommunitySection from '../components/CommunitySection.astro';
+import InstitutionalCTA from '../components/InstitutionalCTA.astro';
+import RedeFooter from '../components/RedeFooter.astro';
+
+// mesmos fundadores e marcas usados na home (src/pages/index.astro) - fonte única de
+// fatos reais, sem inventar datas/números/conquistas (regra 6 e 17 das
+// feedback_regras_institucionais_marca_21_07)
+const fundadores = [
+  {
+    nome: 'Eder Machado',
+    papel: 'Sócio-fundador: produção musical e conteúdo',
+    cidade: 'Goiânia, GO',
+  },
+  {
+    nome: 'Tamara Toré',
+    papel: 'Sócia-fundadora: operação, produto e tecnologia',
+    cidade: 'Rio de Janeiro, RJ',
+  },
+];
+
+const marcas = [
+  {
+    nome: 'ED Tutoriais',
+    desc: 'Loops, waves e pacotes Kontakt em real (BRL), direto com quem já produz há anos.',
+    href: 'https://edtutoriais.com.br',
+    accent: 'brand-purple',
+    logo: '/images/edtutoriais-logo.png',
+    logoW: 80,
+    logoH: 38,
+  },
+  {
+    nome: 'Samples Brasil',
+    desc: 'Loops, waves e pacotes Kontakt em dólar/euro, pra arrastar na tua DAW.',
+    href: 'https://samplesbrasil.com',
+    accent: 'brand-red',
+    logo: '/images/samplesbrasil-logo.png',
+    logoW: 200,
+    logoH: 43,
+  },
+  {
+    nome: 'EM Music Produções',
+    desc: 'Grava, mixa e masteriza com o Eder Machado. Piseiro, arrocha, pagode, axé.',
+    href: 'https://emmusicproducoes.com.br',
+    accent: 'brand-green',
+    logo: '/images/em-music-logo.png',
+    logoW: 578,
+    logoH: 240,
+  },
+  {
+    nome: 'EDTMusic',
+    desc: 'Selo e editora: direitos autorais, contratos e arrecadação musical.',
+    href: 'https://edtmusic.com.br',
+    accent: 'brand-orange',
+    logo: '/images/edtmusic-logo.png',
+    logoW: 753,
+    logoH: 160,
+  },
+  {
+    nome: 'Academia Loops Brasil',
+    desc: 'Cursos de produção fonográfica. Hoje são os cursos da ED Tutoriais, em breve integrados.',
+    href: 'https://academia.loopsbrasil.com.br',
+    accent: 'brand-red',
+  },
+];
+
+// Schema.org - só campos reais confirmados, sem data de fundação inventada (regra 11)
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Rede Loops Brasil',
+  url: 'https://rede.loopsbrasil.com.br/nossa-historia',
+  founder: [
+    { '@type': 'Person', name: 'Eder Machado' },
+    { '@type': 'Person', name: 'Tamara Toré' },
+  ],
+  sameAs: marcas.map((m) => m.href),
+};
+---
+<Base
+  title="Nossa História | Loops Brasil"
+  description="Conheça a história da Loops Brasil, fundada por Eder Machado e Tamara Toré, e descubra como música, tecnologia, educação e amizade deram origem a uma grande comunidade musical."
+  image="/images/loopsbrasil-logo.png"
+  ogType="website"
+  structuredData={structuredData}
+  redeAtual="Rede Loops Brasil"
+>
+  <main>
+    <InstitutionalHero
+      tag="Rede Loops Brasil"
+      title="Nossa história"
+      subtitle="Música, tecnologia, educação e amizade caminhando juntas."
+    />
+    <StorySection fundadores={fundadores} />
+    <PrinciplesSection />
+    <CommunitySection />
+    <BrandSection marcas={marcas} />
+    <InstitutionalCTA
+      texto="Quer conhecer de perto o que cada marca da rede faz?"
+      href="/#as-marcas"
+      label="Conhecer as marcas"
+    />
+    <footer class="border-t border-ink-line px-6 py-12">
+      <div class="mx-auto max-w-4xl">
+        <RedeFooter atual="Rede Loops Brasil" />
+      </div>
+    </footer>
+  </main>
+</Base>
