@@ -24,14 +24,14 @@ const marcas = [
     links: [{ label: 'Site', href: 'https://samplesbrasil.com' }],
   },
   {
-    nome: 'O nascimento da Loops Brasil',
+    nome: 'O nascimento da Rede Loops Brasil',
     ano: '2024 a 2026',
     paragrafos: [
-      'A ideia da Loops Brasil surgiu em 2024. Naquele momento, Eder Machado e Tamara Toré perceberam que a trajetória iniciada pela ED Tutoriais já havia se transformado em algo maior. Existiam cursos, instrumentos virtuais, músicos parceiros, clientes no Brasil e no exterior, produção musical, tecnologia, projetos artísticos e uma comunidade que participava diretamente do crescimento de cada iniciativa.',
-      'A Loops Brasil foi pensada para reunir essas experiências e organizar as diferentes frentes em um mesmo ecossistema. Em 2026, essa ideia começou a se concretizar por meio de uma nova estrutura empresarial, tecnológica, educacional, musical e audiovisual.',
-      'A Loops Brasil está sendo construída como uma grande comunidade musical, formada por pessoas que produzem, tocam, cantam, compõem, ensinam, aprendem, gravam, criam instrumentos, desenvolvem produtos e compartilham conhecimento.',
+      'A ideia da Rede Loops Brasil surgiu em 2024. Naquele momento, Eder Machado e Tamara Toré perceberam que a trajetória iniciada pela ED Tutoriais já havia se transformado em algo maior. Existiam cursos, instrumentos virtuais, músicos parceiros, clientes no Brasil e no exterior, produção musical, tecnologia, projetos artísticos e uma comunidade que participava diretamente do crescimento de cada iniciativa.',
+      'A Rede Loops Brasil foi pensada para reunir essas experiências e organizar as diferentes frentes em um mesmo ecossistema. Em 2026, essa ideia começou a se concretizar por meio de uma nova estrutura empresarial, tecnológica, educacional, musical e audiovisual.',
+      'A Rede Loops Brasil está sendo construída como uma grande comunidade musical, formada por pessoas que produzem, tocam, cantam, compõem, ensinam, aprendem, gravam, criam instrumentos, desenvolvem produtos e compartilham conhecimento.',
       'Grande parte desse crescimento aconteceu a partir da escuta. Novos instrumentos, ritmos, cursos, funcionalidades e formas de atendimento surgiram de pedidos feitos por seguidores, alunos, clientes e parceiros. Nem todo pedido pode ser atendido imediatamente, mas cada sugestão é considerada e ajuda a orientar os próximos passos.',
-      'A Loops Brasil não representa apenas um conjunto de marcas. Ela representa uma rede de pessoas conectadas pela música e pela vontade de criar, aprender, produzir e crescer juntas.',
+      'A Rede Loops Brasil não representa apenas um conjunto de marcas. Ela representa uma rede de pessoas conectadas pela música e pela vontade de criar, aprender, produzir e crescer juntas.',
     ],
     links: [{ label: 'Site', href: 'https://rede.loopsbrasil.com.br/' }],
   },
@@ -81,7 +81,7 @@ const marcas = [
         {m.paragrafos.map((p) => <p class="mt-3 text-paper/70">{p}</p>)}
         <div class="mt-3 flex flex-wrap gap-x-4 gap-y-1">
           {m.links.map((l) => (
-            <a href={l.href} target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-brand-red underline-offset-4 hover:underline">
+            <a href={l.href} target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-brand-red underline">
               {l.label}
             </a>
           ))}
