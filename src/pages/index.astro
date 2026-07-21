@@ -40,6 +40,12 @@ const marcas = [
     logoW: 753,
     logoH: 160,
   },
+  {
+    nome: 'Academia Loops Brasil',
+    desc: 'Cursos de produção fonográfica. Hoje são os cursos da ED Tutoriais, em breve integrados.',
+    href: 'https://academia.loopsbrasil.com.br',
+    accent: 'brand-red',
+  },
 ];
 
 const fundadores = [
@@ -124,7 +130,7 @@ const structuredData = {
     <section id="as-marcas" class="px-6 py-14">
       <div class="mx-auto max-w-4xl">
         <h2 class="font-display text-3xl text-paper">As marcas</h2>
-        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {marcas.map((m) => (
             <a
               href={m.href}
