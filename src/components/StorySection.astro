@@ -5,6 +5,7 @@ interface Fundador {
   nome: string;
   papel: string;
   cidade: string;
+  handle?: string;
 }
 
 interface Props {
@@ -14,21 +15,162 @@ const { fundadores } = Astro.props;
 ---
 <section class="px-6 py-14">
   <div class="mx-auto max-w-3xl">
-    <h2 class="font-display text-3xl text-paper">Como a rede nasceu</h2>
+    <h2 class="font-display text-3xl text-paper">Quem somos</h2>
     <p class="mt-4 text-paper/70">
-      A Rede Loops Brasil nasceu de uma parceria: Eder Machado e Tamara Toré,
-      cada um cuidando de uma parte do trabalho, juntando produção musical e
-      tecnologia pra atender quem faz música de verdade. Um cuida da produção
-      musical e do conteúdo, a outra da operação, do produto e da tecnologia.
+      A Loops Brasil é um ecossistema empresarial, criativo e musical fundado por
+      Eder Machado e Tamara Toré.
     </p>
     <p class="mt-4 text-paper/70">
-      Dessa parceria vieram as marcas que hoje formam a rede: cursos, loops,
-      produção e selo, cada uma cuidando de uma parte da jornada de quem vive
-      de música.
+      Eder Machado e Tamara Toré são amigos, sócios e parceiros de trabalho. A
+      Loops Brasil nasceu da união entre a experiência musical de Eder e o
+      conhecimento de Tamara em gestão, produção executiva, tecnologia,
+      comunicação e infraestrutura digital.
+    </p>
+    <p class="mt-4 text-paper/70">
+      Mais do que reunir marcas e projetos, a Loops Brasil está sendo construída
+      como uma grande comunidade musical formada por produtores, músicos,
+      artistas, alunos, professores, clientes, parceiros e seguidores.
+    </p>
+    <p class="mt-4 text-paper/70">
+      Boa parte do crescimento dos projetos surgiu a partir dos pedidos, das
+      sugestões e das necessidades apresentadas pelas pessoas que acompanham o
+      trabalho. Cada mensagem, dúvida, comentário ou pedido ajuda a mostrar
+      novos caminhos.
+    </p>
+    <p class="mt-4 text-paper/70">
+      Eder e Tamara procuram ouvir o público e entender o que músicos e
+      produtores realmente precisam em sua rotina. Dessa proximidade surgem
+      novos instrumentos virtuais, ritmos, cursos, conteúdos, serviços,
+      melhorias nos sites e formas mais rápidas de atendimento e entrega.
+    </p>
+    <p class="mt-4 text-paper/70">
+      O propósito da Loops Brasil é facilitar o trabalho de quem vive ou deseja
+      viver da música, oferecendo conhecimento, tecnologia, instrumentos,
+      ritmos, produtos e serviços de qualidade.
     </p>
 
     <div class="mt-8 grid gap-4 sm:grid-cols-2">
-      {fundadores.map((f) => <FounderCard nome={f.nome} papel={f.papel} cidade={f.cidade} />)}
+      {fundadores.map((f) => <FounderCard nome={f.nome} papel={f.papel} cidade={f.cidade} handle={f.handle} />)}
     </div>
+
+    <h2 class="mt-16 font-display text-3xl text-paper">Nossa história</h2>
+    <p class="mt-4 text-paper/70">
+      A história da Loops Brasil começou muito antes de o projeto receber esse
+      nome.
+    </p>
+    <p class="mt-4 text-paper/70">
+      Em 2010, Eder Machado criou a ED Tutoriais com uma proposta simples e
+      próxima de quem vive a música: compartilhar informações sobre produção
+      musical, publicar dicas gratuitas no YouTube, oferecer cursos com valores
+      acessíveis e disponibilizar downloads para músicos e produtores.
+    </p>
+    <p class="mt-4 text-paper/70">
+      Por meio do canal ED Tutoriais no YouTube, Eder passou a ensinar de forma
+      prática aquilo que aprendia e aplicava em suas próprias produções. O
+      conteúdo era voltado a produtores, músicos, cantores, arranjadores e
+      pessoas que desejavam desenvolver suas músicas utilizando os recursos que
+      tinham disponíveis.
+    </p>
+    <p class="mt-4 text-paper/70">
+      Com o crescimento do canal, aumentaram também os pedidos, os
+      atendimentos, os custos e o volume de trabalho necessário para manter o
+      projeto. Durante anos, Eder precisou dividir seu tempo entre produzir,
+      ensinar, criar materiais, responder aos alunos e organizar os downloads.
+      Aos poucos, conduzir tudo sozinho começou a se tornar cansativo e difícil
+      de sustentar.
+    </p>
+
+    <h3 class="mt-10 font-display text-xl uppercase text-paper">O encontro entre Eder Machado e Tamara Toré</h3>
+    <p class="mt-4 text-paper/70">
+      Em 2018, Eder Machado foi apresentado a Tamara Toré por Douglas Ziran,
+      amigo em comum, produtor musical, cantor, compositor e proprietário da
+      Audiozion.
+    </p>
+    <p class="mt-4 text-paper/70">
+      O contato inicial aconteceu para que Tamara preparasse um orçamento de
+      melhoria do blog utilizado pela ED Tutoriais para encaminhar os downloads
+      divulgados no canal. Naquele período, Tamara administrava a Unamidia,
+      empresa por meio da qual prestava serviços de tecnologia, comunicação e
+      infraestrutura para empresas e instituições públicas.
+    </p>
+    <p class="mt-4 text-paper/70">
+      Depois de aproximadamente 17 anos participando de grandes projetos de
+      infraestrutura, Tamara também vivia um momento de mudança profissional.
+      Apesar de sua experiência com tecnologia, sentia falta de trabalhar mais
+      perto da música, uma paixão que sempre esteve presente em sua vida.
+    </p>
+    <p class="mt-4 text-paper/70">
+      Ao conhecer a proposta da ED Tutoriais, os cursos, os instrumentos
+      virtuais e o contato de Eder com músicos e produtores, Tamara se
+      identificou com o projeto. O que começou como um orçamento para melhorar
+      o blog se transformou em colaboração, envolvimento e vontade de construir
+      algo maior.
+    </p>
+    <p class="mt-4 text-paper/70">
+      Tamara se ofereceu para ajudar voluntariamente na organização da ED
+      Tutoriais. Ao perceber sua dedicação, sua seriedade e sua confiança no
+      projeto, Eder a convidou para se tornar sua sócia. A partir daquele
+      momento, a experiência musical de Eder passou a se unir ao conhecimento
+      de Tamara em gestão, produção executiva, comunicação, tecnologia,
+      infraestrutura e desenvolvimento de projetos.
+    </p>
+
+    <h3 class="mt-10 font-display text-xl uppercase text-paper">Uma amizade que se tornou família</h3>
+    <p class="mt-4 text-paper/70">
+      A parceria profissional entre Eder Machado e Tamara Toré também se
+      transformou em uma grande amizade. Com o tempo, os dois passaram a se
+      tratar como família, construindo uma relação baseada em confiança,
+      carinho, cumplicidade, respeito, responsabilidade e dedicação. Essa união
+      de forças se tornou uma das bases de todos os projetos.
+    </p>
+    <p class="mt-4 text-paper/70">
+      Eder está mais próximo da criação musical, dos artistas, dos arranjos,
+      dos instrumentos, dos ritmos, da produção e do ensino. Tamara atua na
+      organização, na produção executiva, no planejamento, na comunicação, nos
+      sistemas, nas automações e na infraestrutura necessária para transformar
+      ideias em projetos reais.
+    </p>
+    <p class="mt-4 text-paper/70">
+      O mesmo carinho e a mesma seriedade existentes nessa parceria também
+      orientam a forma como clientes, alunos, músicos, seguidores e parceiros
+      são tratados. Cada contato é importante. Por trás de cada mensagem existe
+      uma pessoa tentando aprender, produzir, gravar, encontrar um som, lançar
+      uma música, desenvolver uma carreira ou resolver uma dificuldade do
+      trabalho.
+    </p>
+
+    <h3 class="mt-10 font-display text-xl uppercase text-paper">O crescimento durante a pandemia</h3>
+    <p class="mt-4 text-paper/70">
+      Com a chegada da pandemia, a realidade de músicos, produtores, artistas e
+      estúdios mudou rapidamente. Muitos profissionais ficaram sem
+      apresentações, perderam o acesso aos espaços onde costumavam trabalhar ou
+      precisaram adaptar suas produções para dentro de casa. Produtores
+      passaram a procurar instrumentos virtuais, loops, samples e ferramentas
+      que permitissem continuar criando e trabalhando a distância.
+    </p>
+    <p class="mt-4 text-paper/70">
+      Foi nesse período que Eder Machado e Tamara Toré decidiram acelerar a
+      organização da ED Tutoriais. O site foi criado e estruturado para
+      permitir a venda e a distribuição dos produtos de forma mais rápida,
+      segura e automática, atendendo a uma necessidade frequente do público:
+      produtores que trabalham durante a madrugada e precisam encontrar um
+      instrumento, adquirir um som e receber o acesso rapidamente para
+      continuar uma produção.
+    </p>
+    <p class="mt-4 text-paper/70">
+      Novos músicos começaram a colaborar com a criação dos produtos, trazendo
+      diferentes ritmos, timbres, instrumentos e formas de tocar. Os cursos
+      ajudaram produtores a desenvolver seus próprios arranjos, músicos a
+      aprender novas formas de gravar e artistas a continuar produzindo mesmo
+      sem acesso constante a grandes estúdios. Também foi possível ampliar as
+      produções realizadas a distância, permitindo que profissionais
+      localizados em diferentes cidades participassem dos mesmos projetos.
+    </p>
+    <p class="mt-4 text-paper/70">
+      As ferramentas nunca foram pensadas para substituir músicos, produtores
+      ou estúdios profissionais. O objetivo sempre foi ampliar as
+      possibilidades de criação, facilitar etapas do trabalho e ajudar cada
+      profissional a produzir melhor com os recursos disponíveis.
+    </p>
   </div>
 </section>

@@ -1,27 +1,35 @@
 ---
-const principios = [
+const blocos = [
   {
-    titulo: 'Amizade e parceria',
-    desc: 'A rede nasceu de uma amizade e se sustenta na parceria: cada marca cuidando bem da sua parte, juntos.',
+    titulo: 'Nossa missão',
+    paragrafos: [
+      'Facilitar a vida de produtores, músicos e artistas por meio de ritmos, instrumentos, cursos, conteúdos, serviços e tecnologias de qualidade.',
+      'Apresentar a diversidade musical brasileira ao mundo e criar ferramentas que ajudem profissionais a transformar suas ideias em produções reais.',
+    ],
   },
   {
-    titulo: 'União de forças',
-    desc: 'Produção musical e tecnologia caminhando lado a lado, sem uma pesar mais que a outra.',
+    titulo: 'Nossa visão',
+    paragrafos: [
+      'Construir uma grande comunidade musical que una conhecimento, tecnologia, produção, educação e oportunidades.',
+      'Criar uma estrutura na qual músicos, produtores, professores, artistas, alunos e parceiros possam aprender, produzir, colaborar e apresentar seus trabalhos.',
+    ],
   },
   {
-    titulo: 'Escuta do público',
-    desc: 'Antes de lançar qualquer coisa, a gente escuta quem realmente usa: músicos, produtores e alunos.',
+    titulo: 'Nossos valores',
+    paragrafos: [
+      'A Loops Brasil acredita na amizade, na confiança, na escuta, na dedicação, no respeito, na responsabilidade e no contato humano.',
+      'Cada aluno, cliente, seguidor, músico e parceiro é tratado com carinho e seriedade. O crescimento da Loops Brasil está ligado às pessoas que acompanham o projeto, compartilham suas necessidades e ajudam a construir cada nova etapa.',
+    ],
   },
 ];
 ---
 <section class="px-6 py-14">
   <div class="mx-auto max-w-3xl">
-    <h2 class="font-display text-3xl text-paper">O que a gente valoriza</h2>
-    <div class="mt-8 grid gap-4 sm:grid-cols-3">
-      {principios.map((p) => (
-        <div class="glow-card rounded-2xl border border-ink-line bg-ink-raised p-5">
-          <p class="font-semibold text-paper">{p.titulo}</p>
-          <p class="mt-2 text-sm text-paper/60">{p.desc}</p>
+    <div class="grid gap-8 sm:grid-cols-3">
+      {blocos.map((b) => (
+        <div>
+          <h3 class="font-display text-xl uppercase text-paper">{b.titulo}</h3>
+          {b.paragrafos.map((p) => <p class="mt-3 text-sm text-paper/70">{p}</p>)}
         </div>
       ))}
     </div>
