@@ -1,8 +1,11 @@
 ---
 interface Brand {
   nome: string;
-  desc: string;
   href: string;
+  logo: string;
+  logoW: number;
+  logoH: number;
+  heightClass: string;
 }
 
 interface Props {
@@ -12,31 +15,28 @@ interface Props {
 const { atual } = Astro.props;
 
 const REDE: Brand[] = [
-  { nome: 'Rede Loops Brasil', desc: 'Hub da rede: todas as marcas num lugar só', href: 'https://loopsbrasil.com.br' },
-  { nome: 'ED Tutoriais', desc: 'Cursos de produção musical', href: 'https://edtutoriais.com.br' },
-  { nome: 'Samples Brasil', desc: 'Loops, waves e pacotes Kontakt prontos', href: 'https://samplesbrasil.com' },
-  { nome: 'EM Music Produções', desc: 'Grava, mixa e masteriza com o Eder Machado', href: 'https://emmusicproducoes.com.br' },
-  { nome: 'Eder Machado', desc: 'Música e clipes do Eder Machado', href: 'https://eder.edtmusic.com.br' },
+  { nome: 'Rede Loops Brasil', href: 'https://loopsbrasil.com.br', logo: '/images/loopsbrasil-logo.png', logoW: 800, logoH: 340, heightClass: 'h-7' },
+  { nome: 'ED Tutoriais', href: 'https://edtutoriais.com.br', logo: '/images/edtutoriais-logo.png', logoW: 80, logoH: 38, heightClass: 'h-5' },
+  { nome: 'Samples Brasil', href: 'https://samplesbrasil.com', logo: '/images/samplesbrasil-logo.png', logoW: 200, logoH: 43, heightClass: 'h-4' },
+  { nome: 'EM Music Produções', href: 'https://emmusicproducoes.com.br', logo: '/images/em-music-logo.png', logoW: 578, logoH: 240, heightClass: 'h-6' },
+  { nome: 'EDTMusic', href: 'https://edtmusic.com.br', logo: '/images/edtmusic-logo.png', logoW: 753, logoH: 160, heightClass: 'h-4' },
 ];
 ---
 
 <div class="w-full border-t border-ink-line pt-8">
-  <p class="text-center text-xs font-semibold uppercase tracking-[0.15em] text-paper/40">A rede</p>
-  <div class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-    {REDE.map((b) => (
-      b.nome === atual ? (
-        <div class="rounded-xl border border-ink-line bg-ink-raised p-3 text-center">
-          <p class="text-xs font-semibold text-paper">
-            {b.nome} <span class="text-paper/40">(você está aqui)</span>
-          </p>
-          <p class="mt-1 text-[11px] leading-snug text-paper/50">{b.desc}</p>
-        </div>
-      ) : (
-        <a href={b.href} class="rounded-xl border border-ink-line p-3 text-center transition hover:border-paper/30">
-          <p class="text-xs font-semibold text-paper">{b.nome}</p>
-          <p class="mt-1 text-[11px] leading-snug text-paper/50">{b.desc}</p>
-        </a>
-      )
+  <p class="text-center text-xs uppercase tracking-[0.2em] text-paper/40">Parte da Rede Loops Brasil</p>
+  <div class="mt-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+    {REDE.filter((b) => b.nome !== atual).map((b) => (
+      <a href={b.href} target="_blank" rel="noopener noreferrer" aria-label={b.nome}>
+        <img
+          src={b.logo}
+          alt={b.nome}
+          class={`${b.heightClass} w-auto opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0`}
+          width={b.logoW}
+          height={b.logoH}
+          loading="lazy"
+        />
+      </a>
     ))}
   </div>
 </div>

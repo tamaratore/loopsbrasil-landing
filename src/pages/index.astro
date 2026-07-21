@@ -2,8 +2,7 @@
 import Base from '../layouts/Base.astro';
 import RedeFooter from '../components/RedeFooter.astro';
 
-// marcas reais da Rede Loops Brasil (confirmadas 17/07). EDTMusic (selo) ainda não
-// tem site/domínio próprio: aparece como "em breve", sem link quebrado.
+// marcas reais da Rede Loops Brasil (confirmadas 17/07, EDTMusic no ar desde 21/07)
 const marcas = [
   {
     nome: 'ED Tutoriais',
@@ -32,13 +31,16 @@ const marcas = [
     logoW: 578,
     logoH: 240,
   },
+  {
+    nome: 'EDTMusic',
+    desc: 'Selo e editora: direitos autorais, contratos e arrecadação musical.',
+    href: 'https://edtmusic.com.br',
+    accent: 'brand-orange',
+    logo: '/images/edtmusic-logo.png',
+    logoW: 753,
+    logoH: 160,
+  },
 ];
-
-const emBreve = {
-  nome: 'EDTMusic',
-  desc: 'Selo e editora: direitos autorais, contratos e arrecadação musical.',
-  logo: '/images/edtmusic-logo.png',
-};
 
 const fundadores = [
   {
@@ -101,7 +103,7 @@ const structuredData = {
     <section class="px-6 py-14">
       <div class="mx-auto max-w-4xl">
         <h2 class="font-display text-3xl text-paper">As marcas</h2>
-        <div class="mt-8 grid gap-4 sm:grid-cols-3">
+        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {marcas.map((m) => (
             <a
               href={m.href}
@@ -126,24 +128,6 @@ const structuredData = {
               <p class="mt-2 text-sm text-paper/60">{m.desc}</p>
             </a>
           ))}
-        </div>
-
-        <!-- "em breve" fica fora do grid de propósito: nao eh um link clicavel
-             como as marcas ativas, entao ganha uma faixa horizontal própria em
-             vez de sobrar sozinha numa grade 2 colunas -->
-        <div class="mt-4 flex flex-col items-center gap-4 rounded-2xl border border-dashed border-ink-line p-6 opacity-60 sm:flex-row sm:justify-between">
-          <img
-            src={emBreve.logo}
-            alt={`Logo ${emBreve.nome}`}
-            class="h-8 w-auto"
-            width="753"
-            height="160"
-            loading="lazy"
-          />
-          <p class="text-center text-sm text-paper/50 sm:text-right">
-            {emBreve.desc}
-            <span class="ml-1 text-xs uppercase tracking-[0.1em] text-paper/40">(em breve)</span>
-          </p>
         </div>
       </div>
     </section>
