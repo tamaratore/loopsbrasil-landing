@@ -50,12 +50,12 @@ const marcas = [
 
 const fundadores = [
   {
-    nome: 'Tamara Toré',
-    papel: 'Sócia-fundadora: operação, produto e tecnologia',
-  },
-  {
     nome: 'Eder Machado',
     papel: 'Sócio-fundador: produção musical e conteúdo',
+  },
+  {
+    nome: 'Tamara Toré',
+    papel: 'Sócia-fundadora: operação, produto e tecnologia',
   },
 ];
 
@@ -63,8 +63,8 @@ const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Rede Loops Brasil',
-  url: 'https://loopsbrasil.com.br',
-  logo: 'https://loopsbrasil.com.br/images/loopsbrasil-logo.png',
+  url: 'https://rede.loopsbrasil.com.br',
+  logo: 'https://rede.loopsbrasil.com.br/images/loopsbrasil-logo.png',
   sameAs: marcas.map((m) => m.href),
   founder: fundadores.map((f) => ({
     '@type': 'Person',
@@ -164,8 +164,8 @@ const structuredData = {
       <div class="mx-auto max-w-4xl">
         <h2 class="font-display text-3xl text-paper">Quem somos</h2>
         <p class="mt-4 max-w-2xl text-sm text-paper/60">
-          A Rede Loops Brasil nasceu da parceria entre Tamara Toré e Eder Machado: uma cuida da
-          operação, do produto e da tecnologia; o outro, da produção musical e do conteúdo.
+          A Rede Loops Brasil nasceu da parceria entre Eder Machado e Tamara Toré: um cuida da
+          produção musical e do conteúdo; a outra, da operação, do produto e da tecnologia.
           Juntos, tocam as marcas acima.
         </p>
         <div class="mt-8 grid gap-4 sm:grid-cols-2">
