@@ -1,10 +1,20 @@
 ---
+interface Logo {
+  nome: string;
+  href: string;
+  logo: string;
+  logoW: number;
+  logoH: number;
+  heightClass: string;
+}
+
 interface Props {
   tag: string;
   title: string;
   subtitle: string;
+  logos?: Logo[];
 }
-const { tag, title, subtitle } = Astro.props;
+const { tag, title, subtitle, logos } = Astro.props;
 ---
 <section class="relative overflow-hidden px-6 pt-16 pb-14 sm:pt-24 sm:pb-20">
   <div
@@ -18,5 +28,22 @@ const { tag, title, subtitle } = Astro.props;
       {title}
     </h1>
     <p class="mt-5 text-lg text-paper/70">{subtitle}</p>
+
+    {logos && logos.length > 0 && (
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+        {logos.map((l) => (
+          <a href={l.href} target="_blank" rel="noopener noreferrer" aria-label={l.nome}>
+            <img
+              src={l.logo}
+              alt={l.nome}
+              class={`${l.heightClass} w-auto opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0`}
+              width={l.logoW}
+              height={l.logoH}
+              loading="lazy"
+            />
+          </a>
+        ))}
+      </div>
+    )}
   </div>
 </section>

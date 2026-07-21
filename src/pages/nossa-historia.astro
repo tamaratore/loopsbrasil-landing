@@ -31,6 +31,13 @@ const fundadores = [
   },
 ];
 
+const logos = [
+  { nome: 'ED Tutoriais', href: 'https://edtutoriais.com.br', logo: '/images/edtutoriais-logo.png', logoW: 80, logoH: 38, heightClass: 'h-7' },
+  { nome: 'Samples Brasil', href: 'https://samplesbrasil.com', logo: '/images/samplesbrasil-logo.png', logoW: 200, logoH: 43, heightClass: 'h-6' },
+  { nome: 'EM Music Produções', href: 'https://emmusicproducoes.com.br', logo: '/images/em-music-logo.png', logoW: 578, logoH: 240, heightClass: 'h-8' },
+  { nome: 'EDTMusic', href: 'https://edtmusic.com.br', logo: '/images/edtmusic-logo.png', logoW: 753, logoH: 160, heightClass: 'h-6' },
+];
+
 const sameAs = [
   'https://edtutoriais.com.br',
   'https://samplesbrasil.com',
@@ -62,9 +69,10 @@ const structuredData = {
 >
   <main>
     <InstitutionalHero
-      tag="Loops Brasil"
-      title="Sobre"
+      tag="Rede Loops Brasil"
+      title="Sobre a Rede Loops Brasil"
       subtitle="Música brasileira, tecnologia e conhecimento unidos para facilitar a criação de produtores e artistas."
+      logos={logos}
     />
     <StorySection fundadores={fundadores} />
     <BrandStorySection />
