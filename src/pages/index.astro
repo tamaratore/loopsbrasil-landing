@@ -130,13 +130,13 @@ const structuredData = {
     <section id="as-marcas" class="px-6 py-14">
       <div class="mx-auto max-w-4xl">
         <h2 class="font-display text-3xl text-paper">As marcas</h2>
-        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
           {marcas.map((m) => (
             <a
               href={m.href}
               target="_blank"
               rel="noopener noreferrer"
-              class={`glow-card flex flex-col rounded-2xl border border-ink-line bg-ink-raised p-6`}
+              class={`glow-card flex w-full flex-col rounded-2xl border border-ink-line bg-ink-raised p-6 sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]`}
             >
               {m.logo ? (
                 <img
