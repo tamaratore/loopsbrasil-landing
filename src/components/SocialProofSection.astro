@@ -5,7 +5,7 @@ const time = [
     papel: 'Compositor, produtor musical e pesquisador dos sons amazônicos, idealizador do projeto "Árvores que Tocam"',
   },
   { nome: 'Michael Viganó', papel: 'Sanfoneiro' },
-  { nome: 'Thays Oliveira', papel: 'Música' },
+  { nome: 'Thays Oliveira', papel: '' },
   {
     nome: 'Talles Guimarães',
     papel: 'Reconhecido entre os melhores violonistas e instrumentistas do Brasil',
@@ -14,7 +14,7 @@ const time = [
 ---
 <section class="px-6 py-14">
   <div class="mx-auto max-w-3xl">
-    <h2 class="font-display text-3xl text-paper">Quem usa e quem toca com a gente</h2>
+    <h2 class="font-display text-3xl text-paper">Parceiros que tocam com a gente</h2>
     <p class="mt-4 text-paper/70">
       Os instrumentos e loops já foram usados em produções de grandes produtores,
       como Fella Brown (produtor de "Zona de Perigo", Léo Santana), e apareceram
@@ -29,7 +29,7 @@ const time = [
       {time.map((t) => (
         <div class="rounded-2xl border border-ink-line bg-ink-raised p-4 text-center">
           <p class="font-semibold text-paper">{t.nome}</p>
-          <p class="mt-1 text-xs text-paper/50">{t.papel}</p>
+          {t.papel && <p class="mt-1 text-xs text-paper/50">{t.papel}</p>}
         </div>
       ))}
     </div>
