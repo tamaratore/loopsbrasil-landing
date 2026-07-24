@@ -88,10 +88,10 @@
 /* nav flutua por cima do conteudo, com degrade transparente->escuro no topo,
    vira fundo solido (#100614, mesma cor das abas laterais) apos rolar */
 .nav-overlay-gradient {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 65%, rgba(0, 0, 0, 0) 100%);
-  padding-bottom: 2.5rem;
-  margin-bottom: -2.5rem;
-  transition: background 0.3s ease;
+  /* sem video/imagem no hero desses sites, entao o degrade transparente
+     nao faz sentido (fica com "cara de sem fundo") - fica solido desde o
+     inicio, igual o resto da pagina depois de rolar */
+  background: #100614;
 }
 .nav-overlay-gradient.nav-solid {
   background: #100614;
