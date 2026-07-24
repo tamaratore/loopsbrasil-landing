@@ -22,8 +22,13 @@ export default {
         },
       },
       fontFamily: {
-        display: ['"Anton"', 'sans-serif'],
-        body: ['"Work Sans"', 'sans-serif'],
+        // tipografia padrao da rede (sonaar.io/demos/?theme=Promote): Anton so
+        // no titulo gigante do hero, Poppins nos titulos de secao, Lato no
+        // corpo, Abel no menu/abas/botoes
+        hero: ['"Anton"', 'sans-serif'],
+        display: ['"Poppins"', 'sans-serif'],
+        body: ['"Lato"', 'sans-serif'],
+        accent: ['"Abel"', 'sans-serif'],
       },
     },
   },

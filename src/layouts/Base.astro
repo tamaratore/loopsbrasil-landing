@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import RedeSwitcher from '../components/RedeSwitcher.astro';
+import Preloader from '../components/Preloader.astro';
+import SideTabs from '../components/SideTabs.astro';
 
 interface Props {
   title: string;
@@ -42,12 +44,27 @@ const ogImage = image ? new URL(image, Astro.site).toString() : undefined;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700;800&family=Lato:wght@400;700&family=Abel&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body class="bg-ink text-paper font-body antialiased">
-    {redeAtual && <RedeSwitcher atual={redeAtual} />}
+  <body class="bg-black text-paper font-body antialiased">
+    <Preloader />
+    <div id="site-nav-wrap" class="nav-overlay-gradient fixed inset-x-0 top-0 z-50">
+      {redeAtual && <RedeSwitcher atual={redeAtual} />}
+    </div>
+    {redeAtual && <SideTabs siteLabel={redeAtual} />}
     <slot />
+
+    <script>
+      const navWrap = document.getElementById('site-nav-wrap');
+      if (navWrap) {
+        const onScroll = () => {
+          navWrap.classList.toggle('nav-solid', window.scrollY > 80);
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+      }
+    </script>
   </body>
 </html>

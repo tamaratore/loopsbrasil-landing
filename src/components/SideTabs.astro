@@ -1,0 +1,65 @@
+---
+// tabs verticais fixas nas bordas, igual sonaar.io/demos/?theme=Promote.
+// Como este e o proprio HUB, a esquerda linka pra si mesmo (nao e link
+// externo) e a direita reforca "voce esta aqui" em vez de citar outro site.
+interface Props {
+  siteLabel: string;
+}
+const { siteLabel } = Astro.props;
+---
+<a
+  href="https://rede.loopsbrasil.com.br"
+  class="side-tab side-tab--left"
+  aria-label="Ir para o inicio da Rede Loops Brasil"
+>
+  <span>+ + Rede Loops Brasil</span>
+</a>
+<div class="side-tab side-tab--right" aria-hidden="true">
+  <span>Você está em {siteLabel} + +</span>
+</div>
+
+<style>
+  .side-tab {
+    position: fixed;
+    top: 50%;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 380px;
+    background: #100614;
+    transform: translateY(-50%);
+  }
+  .side-tab span {
+    display: inline-block;
+    font-family: '"Abel"', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: rgba(247, 244, 238, 0.75);
+    white-space: nowrap;
+  }
+  .side-tab--left {
+    left: 0;
+    box-shadow: 6px 0 18px rgba(0, 0, 0, 0.45);
+  }
+  .side-tab--left span {
+    transform: rotate(-90deg);
+  }
+  .side-tab--right {
+    right: 0;
+    box-shadow: -6px 0 18px rgba(0, 0, 0, 0.45);
+  }
+  .side-tab--right span {
+    transform: rotate(90deg);
+  }
+  .side-tab--left:hover span,
+  .side-tab--right:hover span {
+    color: #f7f4ee;
+  }
+  @media (max-width: 1024px) {
+    .side-tab {
+      display: none;
+    }
+  }
+</style>

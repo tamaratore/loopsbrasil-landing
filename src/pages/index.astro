@@ -136,7 +136,7 @@ const structuredData = {
               href={m.href}
               target="_blank"
               rel="noopener noreferrer"
-              class={`glow-card flex w-full flex-col rounded-2xl border border-ink-line bg-ink-raised p-6 sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]`}
+              class={`glow-card flex w-full flex-col rounded-2xl bg-ink-raised p-6 sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]`}
             >
               {m.logo ? (
                 <img
@@ -169,7 +169,7 @@ const structuredData = {
         </p>
         <div class="mt-8 grid gap-4 sm:grid-cols-2">
           {fundadores.map((f) => (
-            <div class="rounded-2xl border border-ink-line bg-ink-raised p-6">
+            <div class="glow-card rounded-2xl bg-ink-raised p-6">
               <span class="text-xs font-semibold uppercase tracking-[0.15em] text-brand-purple">
                 {f.nome}
               </span>
