@@ -1,0 +1,30 @@
+---
+// Toré pediu (24/07): mesmo esquema de menu do emmusicproducoes (logo + links
+// de secao). Sem redes sociais aqui - a Rede Loops Brasil (o hub) nao tem
+// conta propria de Instagram/YouTube/Facebook confirmada, so as marcas
+// individuais tem (ED Tutoriais, Eder, etc). Sem CTA de venda - esse site e
+// institucional/hub, nao vende nada direto.
+// "Sobre" ja existe na barra de cima (RedeSwitcher, link /nossa-historia) -
+// nao duplicar aqui.
+const LINKS = [
+  { href: '#topo', label: 'Início' },
+  { href: '#as-marcas', label: 'As marcas' },
+  { href: '#quem-somos', label: 'Quem somos' },
+];
+---
+<div id="site-nav" class="hidden sm:block">
+  {/* sem logo aqui - a marca ja aparece na barra de cima (RedeSwitcher) e
+      no hero logo abaixo, repetir de novo virava 3x seguidas empilhado */}
+  <div class="mx-auto flex max-w-5xl items-center justify-center px-4 py-3 sm:px-6">
+    <nav class="hidden items-center gap-6 md:flex">
+      {LINKS.map((l) => (
+        <a
+          href={l.href}
+          class="font-accent text-sm uppercase tracking-[0.15em] text-paper transition hover:text-brand-red"
+        >
+          {l.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</div>

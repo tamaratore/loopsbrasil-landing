@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import RedeFooter from '../components/RedeFooter.astro';
+import SiteNav from '../components/SiteNav.astro';
 
 // marcas reais da Rede Loops Brasil (confirmadas 17/07, EDTMusic no ar desde 21/07)
 const marcas = [
@@ -80,7 +81,8 @@ const structuredData = {
   structuredData={structuredData}
   redeAtual="Rede Loops Brasil"
 >
-  <main>
+  <SiteNav slot="nav" />
+  <main id="topo">
     <!-- HERO -->
     <section class="relative flex flex-col items-center justify-center overflow-hidden px-6 py-16 sm:py-24">
       <div
@@ -160,7 +162,7 @@ const structuredData = {
     </section>
 
     <!-- QUEM SOMOS -->
-    <section class="px-6 py-14">
+    <section id="quem-somos" class="px-6 py-14">
       <div class="mx-auto max-w-4xl">
         <h2 class="font-display text-3xl text-paper">Quem somos</h2>
         <p class="mt-4 max-w-2xl text-sm text-paper/60">
